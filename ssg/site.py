@@ -9,7 +9,7 @@ class Site():
         return 
 
     def create_dir(self, path: Path):
-        directory = Path(f"{self.dest}/{path.relative_to(self.source)}")
+        directory = self.dest/path.relative_to(self.source)
         print(directory)
         directory.mkdir(parents=True, exist_ok=True)
         
